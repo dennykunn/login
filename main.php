@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "koneksi.php";
 ?>
 <!doctype html>
 <html lang="en">
@@ -26,19 +27,16 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">BERANDA <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="main.php?p=beranda">BERANDA <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">APLIKASI PENJUALAN</a>
+                        <a class="nav-link" href="main.php?p=data_user">DATA USERS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">DATA USERS</a>
+                        <a class="nav-link" href="main.php?p=data_barang">DATA BARANG</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">DATA BARANG</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">DATA PENJUALAN</a>
+                        <a class="nav-link" href="main.php?p=data_penjualan">DATA PENJUALAN</a>
                     </li>
                 </ul>
                 <div class="ml-auto"><a class="btn btn-danger" href="logout.php">LOGOUT</a></div>
@@ -56,12 +54,14 @@ session_start();
 
     <!--  -->
     <div class="container border mt-2 py-3 bg-light">
-        <h1>HALAMAN BERANDA</h1>
+        <?php
+            if (isset($_GET['p'])) {
+                include $_GET['p'].".php";
+            } else {
+                include "beranda.php";
+            }
+        ?>
     </div>
-
-
-
-
 
 
     <!--  -->
