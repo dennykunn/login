@@ -47,13 +47,13 @@
 
 					<?php
 					if (isset($_GET['pesan'])) {
-						echo "<p style='color:red;'>Akun tidak ditemukan</p>";
+						echo "<p style='color:red; font-weight: bold;'>Akun tidak ditemukan</p>";
 					}
 					?>
 
 					<?php
 					if (isset($_GET['logout'])) {
-						echo "<p style='color:red';>Anda berhasil logout</p>";
+						echo "<p style='color:red; font-weight: bold;'>Anda berhasil logout</p>";
 					}
 					?>
 

@@ -55,11 +55,11 @@ include "koneksi.php";
     <!--  -->
     <div class="container border mt-2 py-3 bg-light">
         <?php
-            if (isset($_GET['p'])) {
-                include $_GET['p'].".php";
-            } else {
-                include "beranda.php";
-            }
+        if (isset($_GET['p'])) {
+            include $_GET['p'] . ".php";
+        } else {
+            include "beranda.php";
+        }
         ?>
     </div>
 
